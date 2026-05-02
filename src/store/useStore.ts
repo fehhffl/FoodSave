@@ -174,29 +174,4 @@ export const useStore = create<State>((set, get) => ({
   clearToast: () => set({ toast: null }),
 }));
 
-// Selectors
-export const selectActiveReservations = (consumerId?: string) => (s: State) =>
-  s.reservations.filter(
-    (r) =>
-      (!consumerId || r.consumerId === consumerId) &&
-      ['active', 'today', 'tomorrow'].includes(r.status),
-  );
-
-export const selectHistoryReservations = (consumerId?: string) => (s: State) =>
-  s.reservations.filter(
-    (r) =>
-      (!consumerId || r.consumerId === consumerId) &&
-      ['completed', 'cancelled'].includes(r.status),
-  );
-
-export const selectCompletedForConsumer = (consumerId?: string) => (s: State) =>
-  s.reservations.filter(
-    (r) =>
-      (!consumerId || r.consumerId === consumerId) && r.status === 'completed',
-  );
-
-export const selectReservationsForEstablishment = (estId?: string) => (s: State) =>
-  s.reservations.filter((r) => !estId || r.establishmentId === estId);
-
-export const selectProductsForEstablishment = (estId?: string) => (s: State) =>
-  s.products.filter((p) => !estId || p.establishmentId === estId);
+// NOTE: derived data is computed at the call site with useMemo to keep snapshots stable.

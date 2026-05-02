@@ -10,11 +10,7 @@ import {
 } from '../../navigation/types';
 import { Screen, Text, Card, Badge, Button, Thumbnail } from '../../components';
 import { colors, spacing, radius } from '../../theme';
-import {
-  useStore,
-  selectProductsForEstablishment,
-  selectReservationsForEstablishment,
-} from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { formatBRL, daysUntil, discountPct } from '../../utils/format';
 import { Product } from '../../types';
 
@@ -32,10 +28,21 @@ interface Alert {
 
 export function AlertsScreen() {
   const establishment = useStore((s) => s.establishment);
-  const products = useStore(selectProductsForEstablishment(establishment?.id));
-  const reservations = useStore(selectReservationsForEstablishment(establishment?.id));
+  const allProducts = useStore((s) => s.products);
+  const allReservations = useStore((s) => s.reservations);
   const updateProduct = useStore((s) => s.updateProduct);
   const showToast = useStore((s) => s.showToast);
+  const products = useMemo(
+    () => allProducts.filter((p) => !establishment?.id || p.establishmentId === establishment.id),
+    [allProducts, establishment?.id],
+  );
+  const reservations = useMemo(
+    () =>
+      allReservations.filter(
+        (r) => !establishment?.id || r.establishmentId === establishment.id,
+      ),
+    [allReservations, establishment?.id],
+  );
 
   const alerts = useMemo<Alert[]>(() => {
     return products

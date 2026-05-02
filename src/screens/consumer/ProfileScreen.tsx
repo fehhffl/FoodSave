@@ -17,7 +17,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ConsumerTabParamList, RootStackParamList } from '../../navigation/types';
 import { Screen, Text, Card, IconButton } from '../../components';
 import { colors, spacing, radius, shadows, fontFamilies } from '../../theme';
-import { useStore, selectCompletedForConsumer } from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { monthShortUpper, formatBRL } from '../../utils/format';
 
 type Props = CompositeScreenProps<
@@ -27,8 +27,16 @@ type Props = CompositeScreenProps<
 
 export function ProfileScreen({ navigation }: Props) {
   const consumer = useStore((s) => s.consumer);
-  const completed = useStore(selectCompletedForConsumer(consumer?.id));
+  const reservations = useStore((s) => s.reservations);
   const logout = useStore((s) => s.logout);
+  const completed = useMemo(
+    () =>
+      reservations.filter(
+        (r) =>
+          (!consumer?.id || r.consumerId === consumer.id) && r.status === 'completed',
+      ),
+    [reservations, consumer?.id],
+  );
 
   const stats = useMemo(() => {
     const kg = completed.reduce((acc, r) => acc + r.weightKg * r.quantity, 0);

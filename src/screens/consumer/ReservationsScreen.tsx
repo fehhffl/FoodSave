@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+
 import { View, StyleSheet, FlatList, Pressable } from 'react-native';
 import { QrCode } from 'lucide-react-native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
@@ -7,7 +8,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ConsumerTabParamList, RootStackParamList } from '../../navigation/types';
 import { Screen, Text, Card, Thumbnail } from '../../components';
 import { colors, spacing, radius, fontFamilies } from '../../theme';
-import { useStore, selectActiveReservations, selectHistoryReservations } from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { formatBRL, formatTimeRange, formatHour, hoursUntil } from '../../utils/format';
 import { Reservation } from '../../types';
 
@@ -20,8 +21,25 @@ type Tab = 'active' | 'history';
 
 export function ReservationsScreen({ navigation }: Props) {
   const consumer = useStore((s) => s.consumer);
-  const active = useStore(selectActiveReservations(consumer?.id));
-  const history = useStore(selectHistoryReservations(consumer?.id));
+  const reservations = useStore((s) => s.reservations);
+  const active = useMemo(
+    () =>
+      reservations.filter(
+        (r) =>
+          (!consumer?.id || r.consumerId === consumer.id) &&
+          ['active', 'today', 'tomorrow'].includes(r.status),
+      ),
+    [reservations, consumer?.id],
+  );
+  const history = useMemo(
+    () =>
+      reservations.filter(
+        (r) =>
+          (!consumer?.id || r.consumerId === consumer.id) &&
+          ['completed', 'cancelled'].includes(r.status),
+      ),
+    [reservations, consumer?.id],
+  );
   const [tab, setTab] = useState<Tab>('active');
 
   const data = tab === 'active' ? active : history;

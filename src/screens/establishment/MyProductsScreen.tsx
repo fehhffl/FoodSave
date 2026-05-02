@@ -10,10 +10,7 @@ import {
 } from '../../navigation/types';
 import { Screen, Text, Card, Chip, Thumbnail, Badge, IconButton, Button } from '../../components';
 import { colors, spacing, radius } from '../../theme';
-import {
-  useStore,
-  selectProductsForEstablishment,
-} from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { formatBRL, daysUntil, discountPct } from '../../utils/format';
 import { Product } from '../../types';
 
@@ -33,11 +30,15 @@ const filters: { key: Filter; label: string }[] = [
 
 export function MyProductsScreen({ navigation }: Props) {
   const establishment = useStore((s) => s.establishment);
-  const products = useStore(selectProductsForEstablishment(establishment?.id));
+  const allProducts = useStore((s) => s.products);
   const updateProduct = useStore((s) => s.updateProduct);
   const removeProduct = useStore((s) => s.removeProduct);
   const showToast = useStore((s) => s.showToast);
   const [filter, setFilter] = useState<Filter>('all');
+  const products = useMemo(
+    () => allProducts.filter((p) => !establishment?.id || p.establishmentId === establishment.id),
+    [allProducts, establishment?.id],
+  );
 
   const data = useMemo(() => {
     if (filter === 'all') return products;

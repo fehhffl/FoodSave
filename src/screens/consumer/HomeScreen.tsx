@@ -8,7 +8,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { ConsumerTabParamList, RootStackParamList } from '../../navigation/types';
 import { Screen, Text, Chip, Card, Thumbnail, Badge, IconButton } from '../../components';
 import { colors, spacing, radius, shadows } from '../../theme';
-import { useStore, selectCompletedForConsumer } from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { greetingForHour, formatBRL, discountPct } from '../../utils/format';
 import { ProductCategory } from '../../types';
 
@@ -29,7 +29,15 @@ export function HomeScreen({ navigation }: Props) {
   const consumer = useStore((s) => s.consumer);
   const products = useStore((s) => s.products);
   const establishments = useStore((s) => s.establishments);
-  const completed = useStore(selectCompletedForConsumer(consumer?.id));
+  const reservations = useStore((s) => s.reservations);
+  const completed = useMemo(
+    () =>
+      reservations.filter(
+        (r) =>
+          (!consumer?.id || r.consumerId === consumer.id) && r.status === 'completed',
+      ),
+    [reservations, consumer?.id],
+  );
   const [filter, setFilter] = useState<typeof categoryFilters[number]['key']>('nearby');
 
   const greeting = greetingForHour(new Date().getHours());

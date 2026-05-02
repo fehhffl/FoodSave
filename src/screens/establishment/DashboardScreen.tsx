@@ -20,11 +20,7 @@ import {
 } from '../../navigation/types';
 import { Screen, Text, Card, Badge, IconButton, Button } from '../../components';
 import { colors, spacing, radius, shadows, fontFamilies } from '../../theme';
-import {
-  useStore,
-  selectProductsForEstablishment,
-  selectReservationsForEstablishment,
-} from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { formatBRL, daysUntil, monthShortUpper } from '../../utils/format';
 
 type Props = CompositeScreenProps<
@@ -36,9 +32,20 @@ const screenWidth = Dimensions.get('window').width;
 
 export function DashboardScreen({ navigation }: Props) {
   const establishment = useStore((s) => s.establishment);
-  const products = useStore(selectProductsForEstablishment(establishment?.id));
-  const reservations = useStore(selectReservationsForEstablishment(establishment?.id));
+  const allProducts = useStore((s) => s.products);
+  const allReservations = useStore((s) => s.reservations);
   const logout = useStore((s) => s.logout);
+  const products = useMemo(
+    () => allProducts.filter((p) => !establishment?.id || p.establishmentId === establishment.id),
+    [allProducts, establishment?.id],
+  );
+  const reservations = useMemo(
+    () =>
+      allReservations.filter(
+        (r) => !establishment?.id || r.establishmentId === establishment.id,
+      ),
+    [allReservations, establishment?.id],
+  );
 
   const stats = useMemo(() => {
     const active = products.filter((p) => p.status === 'active').length;

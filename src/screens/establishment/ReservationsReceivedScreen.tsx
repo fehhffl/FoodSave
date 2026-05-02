@@ -10,10 +10,7 @@ import {
 } from '../../navigation/types';
 import { Screen, Text, Card, Thumbnail, Badge, Chip, Button } from '../../components';
 import { colors, spacing, radius, fontFamilies } from '../../theme';
-import {
-  useStore,
-  selectReservationsForEstablishment,
-} from '../../store/useStore';
+import { useStore } from '../../store/useStore';
 import { formatBRL, formatTimeRange } from '../../utils/format';
 import { Reservation } from '../../types';
 
@@ -26,11 +23,17 @@ type Filter = 'pending' | 'completed';
 
 export function ReservationsReceivedScreen() {
   const establishment = useStore((s) => s.establishment);
-  const reservations = useStore(selectReservationsForEstablishment(establishment?.id));
-  const consumers = useStore((s) => s.consumer);
+  const allReservations = useStore((s) => s.reservations);
   const confirmPickup = useStore((s) => s.confirmPickup);
   const showToast = useStore((s) => s.showToast);
   const [filter, setFilter] = useState<Filter>('pending');
+  const reservations = useMemo(
+    () =>
+      allReservations.filter(
+        (r) => !establishment?.id || r.establishmentId === establishment.id,
+      ),
+    [allReservations, establishment?.id],
+  );
 
   const data = useMemo(() => {
     if (filter === 'pending')
