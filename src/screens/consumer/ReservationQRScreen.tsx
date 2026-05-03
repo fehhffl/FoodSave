@@ -37,9 +37,11 @@ export function ReservationQRScreen({ route, navigation }: Props) {
             style={{
               fontFamily: fontFamilies.serifBold,
               fontSize: 36,
+              lineHeight: 46,
               color: colors.ink,
               letterSpacing: 1.6,
               marginTop: 8,
+              includeFontPadding: false,
             }}
           >
             {reservation.code}

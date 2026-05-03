@@ -61,9 +61,11 @@ export function ReservationConfirmedScreen({ route, navigation }: Props) {
               style={{
                 fontFamily: fontFamilies.serifBold,
                 fontSize: 30,
+                lineHeight: 40,
                 color: colors.ink,
                 marginTop: 6,
                 letterSpacing: 1.4,
+                includeFontPadding: false,
               }}
             >
               {reservation.code}

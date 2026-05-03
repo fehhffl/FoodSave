@@ -49,7 +49,7 @@ export function Text({
       {...rest}
       style={[
         base,
-        { fontFamily, color, textAlign: align },
+        { fontFamily, color, textAlign: align, includeFontPadding: false },
         style as TextStyle,
       ]}
     >
