@@ -56,7 +56,7 @@ export function AlertsScreen() {
           return {
             product: p,
             severity: 'critical',
-            reason: `Vence em ${days <= 0 ? 'horas' : '1 dia'} e ainda não foi reservado.`,
+            reason: `Estoque parado · janela de ${days <= 0 ? 'horas' : '1 dia'} sem nenhuma reserva.`,
             suggestedDiscount: Math.min(80, currentDiscount + 15),
           };
         }
@@ -64,7 +64,7 @@ export function AlertsScreen() {
           return {
             product: p,
             severity: 'warning',
-            reason: `Estoque sem reservas há ${days} dias.`,
+            reason: `Giro lento · ${days} dias sem reservas.`,
             suggestedDiscount: Math.min(70, currentDiscount + 8),
           };
         }
@@ -93,7 +93,7 @@ export function AlertsScreen() {
           </Text>
         </Text>
         <Text variant="bodyLg" color={colors.smoke} style={{ marginTop: 4 }}>
-          Identificamos produtos em risco e sugerimos descontos para você manter o giro.
+          Identificamos produtos com baixo giro e sugerimos descontos pra renovar o estoque.
         </Text>
 
         <Card padding={spacing.base} bg={colors.sageMuted} elevated={false} style={{ marginTop: spacing.lg }}>

@@ -158,10 +158,10 @@ export function ProductDetailScreen({ route, navigation }: Props) {
             </View>
             <View style={[styles.metaItem, { borderLeftWidth: 1, borderLeftColor: colors.fog, paddingLeft: 16 }]}>
               <Text variant="label" color={colors.smoke}>
-                VALIDADE
+                DISPONIBILIDADE
               </Text>
               <Text variant="serifMd" color={colors.ink} style={{ marginTop: 4 }}>
-                {dDays <= 0 ? 'Hoje' : dDays === 1 ? 'Amanhã' : `Em ${dDays} dias`}
+                {dDays <= 0 ? 'Hoje' : dDays === 1 ? 'Hoje e amanhã' : `Próximos ${dDays} dias`}
               </Text>
             </View>
           </View>
@@ -171,8 +171,16 @@ export function ProductDetailScreen({ route, navigation }: Props) {
               <Text variant="label" color={colors.smoke}>
                 VALOR COM DESCONTO
               </Text>
-              <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 8, marginTop: 4 }}>
-                <Text style={{ fontFamily: fontFamilies.serifBold, fontSize: 32, color: colors.forest }}>
+              <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 8, marginTop: 6 }}>
+                <Text
+                  style={{
+                    fontFamily: fontFamilies.serifBold,
+                    fontSize: 30,
+                    lineHeight: 38,
+                    color: colors.forest,
+                    includeFontPadding: false,
+                  }}
+                >
                   {formatBRL(product.promoPrice)}
                 </Text>
                 <Text

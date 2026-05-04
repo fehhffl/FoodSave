@@ -133,7 +133,7 @@ export function MyProductsScreen({ navigation }: Props) {
                     {p.name}
                   </Text>
                   <Text variant="bodySm" color={colors.smoke}>
-                    {p.quantity} unidades · vence em {days <= 0 ? 'horas' : `${days}d`}
+                    {p.quantity} unidades · janela de {days <= 0 ? 'hoje' : `${days}d`}
                   </Text>
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 4 }}>
                     <Text variant="serifMd" color={colors.forest}>

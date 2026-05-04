@@ -74,7 +74,7 @@ export const products: Product[] = [
     name: 'Mussarela artesanal 500g',
     italicWord: 'artesanal',
     description:
-      'Mussarela artesanal fatiada, embalada a vácuo. Validade próxima — perfeito para receitas do dia.',
+      'Mussarela artesanal fatiada, embalada a vácuo. Em renovação de estoque — perfeito para receitas do dia.',
     category: 'laticinios',
     originalPrice: 38.0,
     promoPrice: 18.5,
@@ -182,7 +182,7 @@ export const products: Product[] = [
     name: 'Iogurte natural com mel',
     italicWord: 'com mel',
     description:
-      'Iogurte natural integral com mel orgânico. Pote 500g. Validade em 2 dias.',
+      'Iogurte natural integral com mel orgânico. Pote 500g. Promo de queima de estoque.',
     category: 'laticinios',
     originalPrice: 22.0,
     promoPrice: 9.9,

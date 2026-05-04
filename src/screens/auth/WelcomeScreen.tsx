@@ -30,14 +30,14 @@ const slides: Slide[] = [
       post: '.',
     },
     body:
-      'Encontre refeições próximas ao vencimento por até 70% menos, apoiando estabelecimentos locais e reduzindo o desperdício de alimentos em Sorocaba.',
+      'Encontre ofertas de queima de estoque em padarias, restaurantes e mercados de Sorocaba — economize até 70% e ainda apoia o giro do comércio do seu bairro.',
   },
   {
     illustration: 'leaf',
     bg: ['#3a5a36', '#1f3520', '#16261a'],
-    title: { pre: 'Cada reserva ', italic: 'salva', mid: ' uma refeição.' },
+    title: { pre: 'Cada reserva ', italic: 'gira', mid: ' o estoque do bairro.' },
     body:
-      'O Brasil joga fora 30% do que produz. Quando você reserva, evita CO₂, salva alimento e gera renda pro comércio do seu bairro.',
+      'Quando você compra uma promoção do dia, o estabelecimento renova o estoque sem prejuízo, recupera capital de giro e segue movimentando o caixa local.',
   },
   {
     illustration: 'package',

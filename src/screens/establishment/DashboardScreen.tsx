@@ -134,15 +134,17 @@ export function DashboardScreen({ navigation }: Props) {
               <Text
                 style={{
                   fontFamily: fontFamilies.serifBold,
-                  fontSize: 36,
+                  fontSize: 34,
+                  lineHeight: 44,
                   color: colors.cream,
                   marginTop: 4,
+                  includeFontPadding: false,
                 }}
               >
                 {formatBRL(stats.recovered)}
               </Text>
               <Text variant="bodyMedium" color={colors.cream} style={{ opacity: 0.85, marginTop: 4 }}>
-                de produtos que iriam pro descarte.
+                via promoções de queima e renovação de estoque.
               </Text>
             </View>
           </LinearGradient>
@@ -165,7 +167,7 @@ export function DashboardScreen({ navigation }: Props) {
             />
             <StatCard
               icon={<AlertTriangle size={16} color={colors.amberDeep} />}
-              label="Próx. ao vencimento"
+              label="Em renovação"
               value={String(stats.expiringSoon)}
               tone="amber"
             />
@@ -239,7 +241,7 @@ export function DashboardScreen({ navigation }: Props) {
                 </Text>
               </Text>
               <Text variant="bodySm" color={colors.smoke}>
-                Produtos em risco com sugestão de desconto.
+                Produtos com baixo giro e sugestão de desconto pra renovar.
               </Text>
             </View>
             <Pressable onPress={() => navigation.navigate('EstablishmentRoot', { screen: 'Alerts' })}>
@@ -273,7 +275,7 @@ export function DashboardScreen({ navigation }: Props) {
                         {p.name}
                       </Text>
                       <Text variant="bodySm" color={colors.amberDeep} style={{ opacity: 0.8 }}>
-                        Vence em {days <= 0 ? 'horas' : `${days}d`} · {p.quantity} disponíveis
+                        Sem giro · {p.quantity} {p.quantity === 1 ? 'unidade' : 'unidades'} parada{p.quantity === 1 ? '' : 's'} · janela de {days <= 0 ? 'hoje' : `${days}d`}
                       </Text>
                     </View>
                     <ChevronRight size={18} color={colors.amberDeep} />
@@ -312,8 +314,10 @@ function StatCard({
         style={{
           fontFamily: fontFamilies.serifBold,
           fontSize: 26,
+          lineHeight: 34,
           color: tone === 'amber' ? colors.amberDeep : colors.ink,
           marginTop: 6,
+          includeFontPadding: false,
         }}
       >
         {value}

@@ -138,7 +138,7 @@ export function AddProductScreen({ navigation }: Props) {
               onChangeText={setDescription}
               multiline
               numberOfLines={3}
-              placeholder="Detalhes, ingredientes, validade…"
+              placeholder="Detalhes, ingredientes, observações…"
               underline={false}
             />
 
@@ -215,7 +215,7 @@ export function AddProductScreen({ navigation }: Props) {
 
             <View>
               <Text variant="label" color={colors.smoke}>
-                VALIDADE / RETIRADA
+                JANELA DE RETIRADA
               </Text>
               <View style={styles.chipRow}>
                 {validityOptions.map((v) => (

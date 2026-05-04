@@ -176,17 +176,17 @@ function ImpactBanner({ kg }: { kg: number }) {
         <Text
           variant="displayLg"
           color={colors.cream}
-          style={{ fontSize: 36, lineHeight: 40 }}
+          style={{ fontSize: 36, lineHeight: 46, includeFontPadding: false }}
         >
           {kg.toFixed(1)}
-          <Text variant="displayMd" color={colors.cream}>
+          <Text variant="displayMd" color={colors.cream} style={{ lineHeight: 46 }}>
             kg
           </Text>
         </Text>
       </View>
       <View style={{ flex: 1.2 }}>
         <Text variant="bodyMedium" color={colors.cream}>
-          de alimentos você já salvou este mês.
+          de estoque que você ajudou a girar este mês.
         </Text>
         <Text
           variant="bodyMedium"

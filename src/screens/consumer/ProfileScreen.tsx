@@ -86,7 +86,11 @@ export function ProfileScreen({ navigation }: Props) {
         >
           <View style={styles.bannerGlow} />
           <View style={styles.avatar}>
-            <Text variant="serifLg" color={colors.cream} style={{ fontSize: 28 }}>
+            <Text
+              variant="serifLg"
+              color={colors.cream}
+              style={{ fontSize: 28, lineHeight: 34, includeFontPadding: false }}
+            >
               {initial}
             </Text>
           </View>
@@ -120,18 +124,20 @@ export function ProfileScreen({ navigation }: Props) {
             <Text
               style={{
                 fontFamily: fontFamilies.serifBold,
-                fontSize: 38,
+                fontSize: 36,
+                lineHeight: 46,
                 color: colors.amberDeep,
                 marginTop: 6,
+                includeFontPadding: false,
               }}
             >
               {stats.kg.toFixed(1)}{' '}
               <Text variant="bodyMedium" italic color={colors.amberDeep}>
-                kg resgatados
+                kg em circulação
               </Text>
             </Text>
             <Text variant="bodyMedium" color={colors.amberDeep} style={{ opacity: 0.85, marginTop: 6 }}>
-              Equivalente a {stats.meals} refeições salvas do descarte.
+              Equivalente a {stats.meals} refeições mantidas em movimento no comércio local.
             </Text>
           </Card>
 
@@ -140,7 +146,11 @@ export function ProfileScreen({ navigation }: Props) {
               <View style={styles.iconChip}>
                 <Wallet size={16} color={colors.forest} strokeWidth={2.4} />
               </View>
-              <Text variant="serifLg" color={colors.ink} style={{ marginTop: spacing.sm, fontSize: 26 }}>
+              <Text
+                variant="serifLg"
+                color={colors.ink}
+                style={{ marginTop: spacing.sm, fontSize: 26, lineHeight: 34, includeFontPadding: false }}
+              >
                 {formatBRL(stats.saved).replace(',00', '')}
               </Text>
               <Text variant="bodySm" color={colors.smoke}>
@@ -151,7 +161,11 @@ export function ProfileScreen({ navigation }: Props) {
               <View style={styles.iconChip}>
                 <Sparkles size={16} color={colors.forest} strokeWidth={2.4} />
               </View>
-              <Text variant="serifLg" color={colors.ink} style={{ marginTop: spacing.sm, fontSize: 26 }}>
+              <Text
+                variant="serifLg"
+                color={colors.ink}
+                style={{ marginTop: spacing.sm, fontSize: 26, lineHeight: 34, includeFontPadding: false }}
+              >
                 {stats.co2.toFixed(1)}
                 <Text variant="bodyMedium" italic color={colors.ink}>
                   {' '}kg
