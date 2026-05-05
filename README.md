@@ -1,131 +1,246 @@
+<div align="center">
+
 # FoodSave
 
-> Conectamos restaurantes, padarias, mercados e hortifrutis a consumidores que querem comprar produtos próximos ao vencimento por até **70% menos** — reduzindo o desperdício alimentar e gerando renda para o comércio local.
+### *A plataforma de renovação de estoque que destrava capital de giro pro comércio local.*
 
-![Welcome & Login](./design/01-welcome-login.jpg)
+Encontre promoções de queima de estoque em padarias, restaurantes, mercados e hortifrutis perto de você — economize até **70%** e ajude o pequeno comércio a manter o caixa em movimento.
+
+<sub>Made in Sorocaba · 2026</sub>
+
+</div>
 
 ---
 
-## O problema que resolvemos
+<table>
+<tr>
+<td width="25%"><img src="./design/01-welcome-login.jpg" alt="Onboarding e login" /></td>
+<td width="25%"><img src="./design/03-home-mapa.jpg" alt="Home e mapa" /></td>
+<td width="25%"><img src="./design/05-detalhe-confirmacao.jpg" alt="Detalhe e confirmação" /></td>
+<td width="25%"><img src="./design/07-reservas-perfil.jpg" alt="Reservas e perfil" /></td>
+</tr>
+<tr align="center">
+<td><sub>Boas-vindas e login</sub></td>
+<td><sub>Home e mapa de ofertas</sub></td>
+<td><sub>Detalhe e confirmação</sub></td>
+<td><sub>Reservas e impacto</sub></td>
+</tr>
+</table>
 
-A cada ano o mundo desperdiça **1,05 bilhão de toneladas de alimentos** (UNEP Food Waste Index, 2024). No Brasil, cerca de **30% de toda a comida produzida** vai para o lixo, o que representa **mais de R$ 1,3 bilhão em perdas anuais** apenas para o varejo de alimentos. Ao mesmo tempo, milhões de famílias enfrentam insegurança alimentar e estabelecimentos pequenos fecham por margens cada vez mais apertadas.
+---
 
-O FoodSave existe para que produtos próximos do vencimento — uma pizza pronta às 19h, uma sacola de pães do dia, uma marmita preparada que não vendeu — encontrem alguém que ainda quer consumi-los, com desconto agressivo e dignidade para o comerciante.
+## Por que existimos
 
-## Proposta de valor
+Estabelecimentos do setor alimentício operam com margem fina e estoque sensível. Quando um item para de girar — porque a procura caiu, porque o lote novo já está chegando, ou porque o pico do dia passou — o lojista precisa decidir entre **travar capital, perder produto, ou queimar preço sem ferramenta nenhuma**. Hoje isso é feito no chute, num quadro de aviso ou simplesmente não é feito.
 
-- **Para o consumidor**: encontrar refeições e mercados de qualidade por uma fração do preço, perto de casa, com retirada em poucos minutos via QR Code. Acompanhar o próprio impacto (kg salvos, CO₂ evitado, R$ economizados) em tempo real.
-- **Para o estabelecimento**: recuperar capital de produtos que iriam pro descarte, fidelizar clientes que conhecem o estabelecimento por descontos relevantes, e receber **alertas preditivos** sugerindo o desconto ideal antes do vencimento.
+O FoodSave transforma essa decisão em uma alavanca operacional. A cada produto com baixo giro, o estabelecimento publica uma promoção de queima de estoque, recupera capital, abre espaço pro próximo lote e fideliza um cliente do bairro pagando uma fração do preço cheio.
 
-## Público-alvo
+> **Margem, não discurso.**
+> Não vendemos ESG. Vendemos giro de estoque.
 
-- **Consumidores**: famílias e estudantes em centros urbanos (foco inicial em Sorocaba/SP), interessados em economia, alimentação consciente e impacto ambiental.
-- **Estabelecimentos**: padarias, pizzarias, bistrôs, hortifrutis, mercados de bairro e dark kitchens com 1–10 unidades.
+## Como funciona
 
-## Funcionalidades
+<table>
+<tr>
+<td width="50%" valign="top">
 
-### Perfil consumidor
+### Para quem compra
 
-- **Onboarding** com mensagem de proposta de valor e carrossel de slides
-- **Home** com saudação dinâmica, card de impacto do mês, chips de categoria (Padarias, Mercados, Restaurantes, Hortifruti) e lista de ofertas próximas
-- **Mapa estilizado** com pins de preço sobrepostos, busca em tempo real e card flutuante do produto selecionado
-- **Detalhe do produto** com hero ilustrado, badges de disponibilidade, info do estabelecimento (rating, distância, endereço), bloco de preço com percentual de desconto e botão de reserva
-- **Confirmação de reserva** com QR Code real gerado on-device, código `FS · XXXX`, janela de retirada e link para abrir no mapa
-- **Minhas reservas** com abas Ativas / Histórico, barra de status colorida (laranja=hoje, âmbar=amanhã) e atalho para mostrar QR
-- **Perfil & impacto** com card âmbar destacando kg resgatados, equivalência em refeições, R$ economizados e CO₂ evitado, lista de configurações
+Abra o app, veja o que está em promoção perto de você, reserve em dois toques e retire na hora marcada com um QR Code.
 
-### Perfil estabelecimento
+- Ofertas com até 70% off em padarias, restaurantes, mercados e hortifrutis
+- Mapa interativo com pinos de preço em tempo real
+- Reserva instantânea, retirada em poucos minutos
+- Acompanhamento de impacto: quanto você economizou, quanto ajudou a girar no comércio local e quanto de CO₂ deixou de ser emitido
 
-- **Painel** com capital recuperado no mês, grid de KPIs (ativos / reservas hoje / conversão / próximos ao vencimento), gráfico de vendas dos últimos 7 dias e atalhos rápidos
-- **Cadastro de produto** com formulário completo (nome, descrição, categoria, preço original × promocional com cálculo automático de %, quantidade, peso, validade)
-- **Cadastro em lote** simulando importação de planilha com cards editáveis e validação por linha
-- **Meus produtos** com filtros por status (ativo / pausado / vendido), pausar/reativar/remover inline
-- **Reservas recebidas** com lista pendentes/concluídas, código `FS · XXXX` e botão de confirmar retirada que move a reserva para concluída e atualiza as métricas de impacto do consumidor em tempo real
-- **Alertas preditivos** identificando produtos com validade ≤ 1 dia sem reservas (críticos) ou ≤ 3 dias parados (avisos), com **sugestão de desconto** que aplica novo preço com um toque
+</td>
+<td width="50%" valign="top">
+
+### Para quem vende
+
+Cadastre seu produto sem giro, defina o desconto e deixe nosso motor preditivo sugerir o resto. Recupere capital travado em segundos.
+
+- Painel com capital recuperado no mês e gráfico de vendas dos últimos 7 dias
+- Cadastro individual ou em lote
+- Alertas preditivos com sugestão de desconto pra acelerar o giro
+- Confirmação de retirada via QR Code, com baixa automática de estoque
+
+</td>
+</tr>
+</table>
+
+---
+
+## A experiência
+
+<table>
+<tr>
+<td width="50%">
+
+**Onboarding e login**
+
+Carrossel com gradiente verde-floresta, ilustrações vetoriais artesanais e tipografia serif com palavras-chave em itálico. Um único login serve para os dois perfis (consumidor e estabelecimento).
+
+</td>
+<td width="50%">
+<img src="./design/01-welcome-login.jpg" alt="Welcome e login" />
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="./design/03-home-mapa.jpg" alt="Home e mapa" />
+</td>
+<td width="50%">
+
+**Descoberta**
+
+A home apresenta uma saudação dinâmica, um banner verde mostrando quanto cada cliente ajudou a girar no mês, chips horizontais por categoria e a lista de ofertas do dia. O mapa traz pinos de preço sobrepostos a uma planta estilizada e um card flutuante para o item selecionado.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**Da reserva ao QR Code**
+
+A tela de detalhe abre em um hero ilustrado de cor única, com badges de status e um bloco de preço destacando o desconto em itálico âmbar. A reserva gera um código `FS · XXXX` único e um QR Code real apresentado no estabelecimento.
+
+</td>
+<td width="50%">
+<img src="./design/05-detalhe-confirmacao.jpg" alt="Detalhe e confirmação" />
+</td>
+</tr>
+<tr>
+<td width="50%">
+<img src="./design/07-reservas-perfil.jpg" alt="Reservas e perfil" />
+</td>
+<td width="50%">
+
+**Acompanhamento e impacto**
+
+A aba de reservas separa pendentes e histórico, com uma barra colorida no topo de cada cartão indicando urgência. O perfil reúne o card âmbar de impacto (kg em circulação · refeições mantidas em movimento) e dois cartões compactos com R$ economizados e CO₂ evitado.
+
+</td>
+</tr>
+</table>
+
+---
 
 ## Identidade visual
 
-- **Paleta**: verde floresta `#2d4a2b`, fundo creme `#f5efe6`, accent âmbar `#d97540`, sage `#c8d5c0`
-- **Tipografia**: Fraunces (serif display, com itálicos expressivos em palavras-chave) + Inter (sans-serif body)
-- **Cards**: cantos arredondados generosos (16–24px), sombras sutis, bastante padding interno
-- **Botões primários**: pill totalmente arredondado, verde escuro com texto branco
+<table>
+<tr>
+<th align="left" width="25%">Token</th>
+<th align="left" width="50%">Aplicação</th>
+<th align="left" width="25%">Hex</th>
+</tr>
+<tr>
+<td><b>Verde floresta</b></td>
+<td>Cor primária, CTAs, cabeçalhos</td>
+<td><code>#2d4a2b</code></td>
+</tr>
+<tr>
+<td><b>Creme</b></td>
+<td>Fundo padrão de todas as telas</td>
+<td><code>#f5efe6</code></td>
+</tr>
+<tr>
+<td><b>Âmbar</b></td>
+<td>Acento quente, badges de desconto</td>
+<td><code>#d97540</code></td>
+</tr>
+<tr>
+<td><b>Sage</b></td>
+<td>Superfícies secundárias e cards leves</td>
+<td><code>#c8d5c0</code></td>
+</tr>
+<tr>
+<td><b>Tinta</b></td>
+<td>CTAs alternativos e tipografia primária</td>
+<td><code>#1a1a1a</code></td>
+</tr>
+</table>
 
-Mockups completos da UI estão em [`./design/`](./design/).
+**Fraunces** carrega os títulos com itálicos expressivos em palavras-chave. **Inter** sustenta o corpo de texto. Cards com cantos generosos (16–24px), sombras sutis e *pill buttons* totalmente arredondados completam o tom de revista editorial.
 
-## Stack tecnológica
+---
 
-- **Expo SDK 54** (managed workflow) + **React Native 0.81** + **TypeScript**
-- **React Navigation** (native-stack + bottom-tabs)
-- **Zustand** para estado global compartilhado entre os perfis
-- **expo-google-fonts** para Fraunces e Inter
-- **expo-linear-gradient** para os heroes em verde/âmbar
-- **react-native-svg** para ilustrações vetoriais e mapa estilizado
-- **react-native-qrcode-svg** para QR Codes de retirada
-- **react-native-chart-kit** para o gráfico de vendas do painel
-- **lucide-react-native** para o conjunto de ícones
+## Stack
 
-## Instalação
+<table>
+<tr><td><b>Mobile runtime</b></td><td>React Native 0.81 · Expo SDK 54 · TypeScript</td></tr>
+<tr><td><b>Navegação</b></td><td>React Navigation (native-stack + bottom-tabs)</td></tr>
+<tr><td><b>Estado</b></td><td>Zustand</td></tr>
+<tr><td><b>Tipografia</b></td><td>Fraunces e Inter via expo-google-fonts</td></tr>
+<tr><td><b>UI / motion</b></td><td>expo-linear-gradient · react-native-svg · react-native-qrcode-svg · react-native-chart-kit · lucide-react-native</td></tr>
+<tr><td><b>Plataformas</b></td><td>iOS 16+ · Android 13+ (managed workflow)</td></tr>
+</table>
 
-Pré-requisitos: Node 18+, Xcode (iOS) e/ou Android Studio.
+---
+
+## Rodando localmente
+
+Pré-requisitos: **Node 18+**, **Xcode** (iOS) e/ou **Android Studio**.
 
 ```bash
-git clone <repo>
+git clone git@github.com:fehhffl/FoodSave.git
 cd FoodSave
 npm install
-```
-
-## Execução
-
-```bash
 npx expo start
 ```
 
-Em seguida pressione `i` no terminal para abrir no simulador iOS ou `a` para Android. Para celular físico, use o app **Expo Go** e escaneie o QR Code do terminal.
+No prompt do Expo: pressione `i` para abrir no simulador iOS, `a` para Android ou escaneie o QR Code com o **Expo Go** em um dispositivo físico.
 
 ### Credenciais de demonstração
 
 | Perfil          | E-mail                        | Senha    |
-|-----------------|-------------------------------|----------|
+| --------------- | ----------------------------- | -------- |
 | Consumidor      | `lucas.andrade@email.com`     | `123456` |
 | Estabelecimento | `padaria@foodsave.com`        | `123456` |
 
 Outros estabelecimentos disponíveis: `napoli@foodsave.com`, `bistro@foodsave.com`, `hortifruti@foodsave.com` (mesma senha).
 
-## Estrutura de pastas
+---
+
+## Estrutura
 
 ```
 FoodSave/
-├─ App.tsx                       # Bootstrap, fonts, providers, navigator
-├─ app.json                      # Config Expo
-├─ design/                       # Mockups de referência da UI
+├─ App.tsx                    # Bootstrap de fontes, providers e navegação
+├─ app.json                   # Configuração Expo
+├─ design/                    # Mockups oficiais da marca
 └─ src/
-   ├─ components/                # Primitivos (Text, Button, Card, Chip, Badge, Thumbnail, ToastHost…)
-   ├─ data/                      # Seed: estabelecimentos, produtos, reservas, usuários
-   ├─ navigation/                # RootNavigator + ConsumerTabs + EstablishmentTabs
+   ├─ components/             # Primitivos (Text, Button, Card, Chip, Badge, Thumbnail, ToastHost…)
+   ├─ data/                   # Catálogos de estabelecimentos, produtos, reservas
+   ├─ navigation/             # RootNavigator + ConsumerTabs + EstablishmentTabs
    ├─ screens/
-   │  ├─ auth/                   # WelcomeScreen, LoginScreen
-   │  ├─ consumer/               # Home, Map, ProductDetail, ReservationConfirmed, Reservations, ReservationQR, Profile
-   │  └─ establishment/          # Dashboard, MyProducts, ReservationsReceived, Alerts, AddProduct, BatchProducts
-   ├─ store/                     # Zustand store (sessão, produtos, reservas, ações)
-   ├─ theme/                     # colors, typography, spacing/shadows/radius
-   ├─ types/                     # Tipos compartilhados (Product, Reservation, Establishment…)
-   └─ utils/                     # Formatadores (BRL, %, datas)
+   │  ├─ auth/                # Welcome, Login
+   │  ├─ consumer/            # Home, Map, ProductDetail, ReservationConfirmed, Reservations, ReservationQR, Profile
+   │  └─ establishment/       # Dashboard, MyProducts, ReservationsReceived, Alerts, AddProduct, BatchProducts
+   ├─ store/                  # Estado global compartilhado entre os dois perfis
+   ├─ theme/                  # Cores, tipografia, espaçamento, sombras, raio
+   ├─ types/                  # Tipos compartilhados
+   └─ utils/                  # Formatadores (BRL, %, datas)
 ```
 
-## Capturas de tela
-
-| Boas-vindas / Login | Home / Mapa | Detalhe / Confirmação | Reservas / Perfil |
-|:---:|:---:|:---:|:---:|
-| ![](./design/01-welcome-login.jpg) | ![](./design/03-home-mapa.jpg) | ![](./design/05-detalhe-confirmacao.jpg) | ![](./design/07-reservas-perfil.jpg) |
+---
 
 ## Roadmap
 
-- [ ] Pagamento integrado (Pix + cartão)
-- [ ] Notificações push de ofertas em raio configurável
-- [ ] Programa de fidelidade com selo verde para estabelecimentos
-- [ ] Dashboard ESG agregado para redes com múltiplas unidades
-- [ ] API pública para integração com PDVs
+| Próxima onda                                | Status        |
+| ------------------------------------------- | ------------- |
+| Pagamento integrado (Pix + cartão)          | em projeto    |
+| Notificações push de ofertas em raio        | em projeto    |
+| Programa de fidelidade com selo verde       | discovery     |
+| Painel ESG agregado para redes              | discovery     |
+| API pública para integração com PDV         | em pesquisa   |
+
+---
 
 ## Licença
 
 Proprietária. Todos os direitos reservados © 2026 FoodSave.
+
+<div align="center">
+<sub>Made with care in Sorocaba/SP · Movendo estoque, gerando giro, deixando comida no prato.</sub>
+</div>
